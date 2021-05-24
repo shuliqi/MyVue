@@ -1,0 +1,52 @@
+<html>
+  <header></header>
+  <style>
+    #app {
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      margin-top: 200px;
+      width: 300px;
+      height: 300px;
+    } 
+    .input {
+      width: 200px;
+      height: 35px;
+      font-size: 20px;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="item">
+          <h2>视图：</h2>
+          <input class="input"
+                 type="text" 
+                 v-model="name">
+        </div>
+        <div class="item">
+          <h2>数据：</h2>
+          <h2>{{ name }}</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/observer.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/compile.js"></script>
+  <script src="./js/watcher.js"></script>
+  <script>
+    const vm = new MyVue({
+      el: "#app",
+      data: {
+        name: "舒丽琦",
+      }
+    })
+  </script>
+</html>
