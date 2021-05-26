@@ -1,41 +1,7 @@
 <html>
   <header></header>
-  <style>
-    #app {
-      display: flex;
-      justify-content: center;
-    }
-    .container {
-      margin-top: 200px;
-      width: 300px;
-      height: 300px;
-    } 
-    .input {
-      width: 200px;
-      height: 35px;
-      font-size: 20px;
-    }
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-  </style>
   <body>
-    <div id="app">
-      <div class="container">
-        <div class="item">
-          <h2>视图：</h2>
-          <input class="input"
-                 type="text" 
-                 v-model="name">
-        </div>
-        <div class="item">
-          <h2>数据：</h2>
-          <h2>{{ name }}</h2>
-        </div>
-      </div>
-    </div>
+    <div id="app"></div>
   </body>
   <script src="./js/observer.js"></script>
   <script src="./js/index.js"></script>
@@ -46,7 +12,18 @@
       el: "#app",
       data: {
         name: "舒丽琦",
+        list: ["舒", "丽", "琦"]
       }
     })
+    // 给数组添加一个元素， 这个元素是一个数组
+    vm.list.push(["小小舒", "sha"]);
+
+    // 对新增的元素（新增的是一个数组：["小小舒", "sha"]）再添加元素
+    vm.list[3].push("哈哈哈")
+
+    // 添加数组
+    vm.list.splice(3, 0,"哈哈哈", "怎么着");
+
+    console.log(vm.list);
   </script>
 </html>
